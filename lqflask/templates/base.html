@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- There are three blocks defined here that will be overridden in the other templates: -->
+<title>{% block title %}{% endblock %} - LQFLASK</title>
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+<nav>
+    <h1>LQFLASK</h1>
+    <ur>
+        {% if g.user %}
+        <li><span>{{g.user['username']}}</span></li>
+        <li><a href="{{url_for('auth.logout')}}">Log Out</a></li>
+        {% else %}
+        <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+        <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        {% endif %}
+    </ur>
+</nav>
+<section class="content">
+    <head>
+        {% block header %}{% endblock %}
+    </head>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{message}}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>

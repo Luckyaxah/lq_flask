@@ -1,0 +1,4 @@
+include lqflask/schema.sql
+graft lqflask/static
+graft lqflask/templates
+global-exclude *.pyc
