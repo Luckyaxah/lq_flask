@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{% block title %}功能列表{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div>
+    <a class="action" href="{{ url_for('blog.index')}}">blog</a>
+</div>
+<div>
+    <a class="action" href="{{ url_for('ocr.index')}}">ocr</a>
+</div>
+
+{% endblock %}

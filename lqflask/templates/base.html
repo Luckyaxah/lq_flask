@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!-- There are three blocks defined here that will be overridden in the other templates: -->
-<title>{% block title %}{% endblock %} - LQFLASK</title>
+<title>{% block title %}{% endblock %} - lqFlask</title>
 <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 <nav>
-    <h1>LQFLASK</h1>
-    <ur>
+    <h1>lqFlask</h1>
+    <ul>
         {% if g.user %}
         <li><span>{{g.user['username']}}</span></li>
         <li><a href="{{url_for('auth.logout')}}">Log Out</a></li>
@@ -12,7 +11,7 @@
         <li><a href="{{ url_for('auth.register') }}">Register</a></li>
         <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
         {% endif %}
-    </ur>
+    </ul>
 </nav>
 <section class="content">
     <head>

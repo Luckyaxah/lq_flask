@@ -10,7 +10,8 @@ from lqflask.db import get_db
 import and register the blueprint from the factory using app.register_blueprint()
 """
 
-bp = Blueprint('blog', __name__)
+bp = Blueprint('blog', __name__, url_prefix='/blog')
+
 @bp.route('/')
 def index():
     db = get_db()

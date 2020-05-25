@@ -77,7 +77,7 @@ def login():
             """
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('index'))
+            return redirect(url_for('main_index'))
         
         flash(error)
     return render_template('auth/login.html')
@@ -107,7 +107,7 @@ won't load a user on subsequent requests.
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('main_index'))
 
 
 def login_required(view):
