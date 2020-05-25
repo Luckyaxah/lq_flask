@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 {% block header %}
-<h1>{% block title %}OCR{% endblock %}</h1>
+<h1>{% block title %}表格文件识别{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-OCR
+
+    <div>
+        <h2>表格图片识别</h2>
+        <form action="/ocr/form" enctype='multipart/form-data' method='POST'>
+            <input type="file" name="file">
+            <input type="submit" value="上传">
+        </form>
+    </div>
+    <div>
+        <h2>手写图片识别</h2>
+        <form action="/ocr/handwriting" enctype='multipart/form-data' method='POST'>
+            <input type="file" name="file">
+            <input type="submit" value="上传">
+        </form>
+    </div>
+
 {% endblock %}

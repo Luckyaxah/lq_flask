@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}404{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <img src="{{url_for('static', filename='picture/404.jpg')}}" style="width: 100%; height: auto">
+    404错误了，请检查链接是否正确
+
+
+{% endblock %}
+

@@ -3,6 +3,8 @@ from flask import(
 )
 
 bp = Blueprint('ocr', __name__,url_prefix='/ocr')
+
+
 @bp.route('/')
 def index():
     return render_template('ocr/index.html')
